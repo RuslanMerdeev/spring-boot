@@ -1,0 +1,11 @@
+# suppress inspection "UnusedProperty" for whole file
+springdoc:
+  show-actuator: true
+
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          another-service:
+            url: https://dummyjson.com

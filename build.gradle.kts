@@ -24,6 +24,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$openapiVersion")
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign:4.0.3")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
