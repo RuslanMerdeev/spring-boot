@@ -7,5 +7,5 @@ spring:
     openfeign:
       client:
         config:
-          another-service:
+          product-service:
             url: https://dummyjson.com
