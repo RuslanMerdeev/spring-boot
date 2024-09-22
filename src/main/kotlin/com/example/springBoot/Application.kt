@@ -12,5 +12,6 @@ class Application
 fun main(args: Array<String>) {
     val context = runApplication<Application>(*args)
 
-    val bean = context.getBean(GetBrandDelegate::class.java)
+//    val bean = context.containsBean("getBrandDelegate")
+//    requireNotNull(bean)
 }

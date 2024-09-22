@@ -11,13 +11,13 @@ import org.springframework.stereotype.Component
 //@Scope(BeanDefinition.SCOPE_PROTOTYPE)
 @Suppress("unused")
 class GetBrandDelegate(
-//    private val productConfigService: ProductConfigService,
+    private val productConfigService: ProductConfigService,
 ): JavaDelegate {
 
 //    @Autowired lateinit var productConfigService: ProductConfigService
 
     override fun execute(execution: DelegateExecution) {
-//        val brand = productConfigService.fetchBy(execution.id).brand
-//        execution.setVariable(BRAND, brand)
+        val brand = productConfigService.fetchBy(execution.id).brand
+        execution.setVariable(BRAND, brand)
     }
 }
