@@ -33,8 +33,8 @@ class FlowableConfiguration {
         context: ConfigurableApplicationContext,
     ): SpringProcessEngineConfiguration {
         val cfg = SpringProcessEngineConfiguration()
-        cfg.deploymentResources = PathMatchingResourcePatternResolver()
-            .getResources("classpath*:processes/*.bpmn20.xml")
+        cfg.deploymentResources =
+            PathMatchingResourcePatternResolver().getResources("classpath*:processes/*.bpmn20.xml")
         cfg.deploymentMode = "single-resource"
         cfg.dataSource = dataSource
         cfg.transactionManager = transactionManager

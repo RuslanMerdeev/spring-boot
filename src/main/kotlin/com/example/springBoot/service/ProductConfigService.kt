@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class ProductConfigService(
-    private val client: ProductConfigClient
+    private val client: ProductConfigClient,
 ) {
 
     fun fetchBy(productId: String) = client.fetchBy(productId)

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class ProductProcessService(
-    private val runtimeService: RuntimeService
+    private val runtimeService: RuntimeService,
 ) {
 
     fun startWith(productId: String) {
