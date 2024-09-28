@@ -11,7 +11,7 @@ import java.util.UUID
 @Table(name = "PRODUCTS")
 data class ProductEntity(
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    val id: UUID,
+    @GeneratedValue(strategy = GenerationType.UUID)
+    val id: UUID? = null,
     val brand: String,
 )
