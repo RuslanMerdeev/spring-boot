@@ -1,6 +1,5 @@
 package com.example.springBoot
 
-import com.example.springBoot.delegate.GetBrandDelegate
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.cloud.openfeign.EnableFeignClients
@@ -10,8 +9,5 @@ import org.springframework.cloud.openfeign.EnableFeignClients
 class Application
 
 fun main(args: Array<String>) {
-    val context = runApplication<Application>(*args)
-
-//    val bean = context.containsBean("getBrandDelegate")
-//    requireNotNull(bean)
+    runApplication<Application>(*args)
 }
