@@ -5,11 +5,11 @@ import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 
-@FeignClient(name = "another-service")
-interface AnotherServiceClient {
+@FeignClient(name = "product-service")
+interface ProductConfigClient {
 
     @GetMapping("/products/{productId}")
-    fun fetchProductConfig(
-        @PathVariable productId: String?
+    fun fetchBy(
+        @PathVariable productId: String,
     ): ProductDto
 }

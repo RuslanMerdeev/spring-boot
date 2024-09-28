@@ -2,4 +2,4 @@ root = true
 
 [{*.kt,*.kts}]
 ktlint_code_style = official
-# disabled_rules = no-wildcard-imports,final-newline,no-blank-line-before-rbrace,filename,import-ordering
+ktlint_standard_no-empty-first-line-in-class-body = disabled
