@@ -9,3 +9,7 @@ spring:
         config:
           product-service:
             url: https://dummyjson.com
+
+#flowable:
+#  process-definition-location-prefix: classpath*:/processes/
+#  process-definition-location-suffixes: "**.bpmn20.xml,**.bpmn"

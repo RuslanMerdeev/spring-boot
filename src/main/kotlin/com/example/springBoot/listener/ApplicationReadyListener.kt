@@ -1,21 +1,19 @@
 package com.example.springBoot.listener
 
-import org.flowable.engine.ProcessEngine
+import org.flowable.spring.SpringProcessEngineConfiguration
 import org.springframework.boot.context.event.ApplicationReadyEvent
 import org.springframework.context.event.EventListener
 import org.springframework.stereotype.Component
 
 
 @Component
+@Suppress("unused")
 class ApplicationReadyListener(
-    private val processEngine: ProcessEngine,
+    private val processEngineConfiguration: SpringProcessEngineConfiguration,
 ) {
 
     @EventListener(ApplicationReadyEvent::class)
-    fun doSomethingAfterStartup() {
-        processEngine.repositoryService
-            .createDeployment()
-            .addClasspathResource("processes/ProductProcess.bpmn20.xml")
-            .deploy()
+    fun afterStartup() {
+        processEngineConfiguration.start()
     }
 }
