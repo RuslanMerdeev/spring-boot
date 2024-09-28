@@ -9,7 +9,8 @@ spring:
         config:
           product-service:
             url: https://dummyjson.com
-
-#flowable:
-#  process-definition-location-prefix: classpath*:/processes/
-#  process-definition-location-suffixes: "**.bpmn20.xml,**.bpmn"
+  datasource:
+    username: sa
+    password:
+    url: "jdbc:h2:mem:flowable;DB_CLOSE_DELAY=-1"
+    driver-class-name: org.h2.Driver

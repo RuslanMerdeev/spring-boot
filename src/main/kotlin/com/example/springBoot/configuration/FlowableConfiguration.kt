@@ -2,33 +2,20 @@ package com.example.springBoot.configuration
 
 import org.flowable.engine.ProcessEngine
 import org.flowable.engine.ProcessEngineConfiguration
-import org.flowable.engine.RepositoryService
 import org.flowable.engine.RuntimeService
 import org.flowable.spring.ProcessEngineFactoryBean
 import org.flowable.spring.SpringProcessEngineConfiguration
-import org.h2.Driver
 import org.springframework.context.ConfigurableApplicationContext
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.core.io.ClassPathResource
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver
 import org.springframework.jdbc.datasource.DataSourceTransactionManager
-import org.springframework.jdbc.datasource.SimpleDriverDataSource
 import org.springframework.transaction.PlatformTransactionManager
 import javax.sql.DataSource
 
 @Configuration
 @Suppress("unused")
 class FlowableConfiguration {
-
-    @Bean
-    fun dataSource(): DataSource {
-        val dataSource = SimpleDriverDataSource()
-        dataSource.setDriverClass(Driver::class.java)
-        dataSource.url = "jdbc:h2:mem:flowable;DB_CLOSE_DELAY=-1"
-        dataSource.username = "sa"
-        dataSource.password = ""
-        return dataSource
-    }
 
     @Bean
     fun transactionManager(
@@ -46,7 +33,8 @@ class FlowableConfiguration {
         context: ConfigurableApplicationContext,
     ): SpringProcessEngineConfiguration {
         val cfg = SpringProcessEngineConfiguration()
-        cfg.deploymentResources = arrayOf(ClassPathResource("processes/ProductProcess.bpmn20.xml"))
+        cfg.deploymentResources = PathMatchingResourcePatternResolver()
+            .getResources("classpath*:processes/*.bpmn20.xml")
         cfg.deploymentMode = "single-resource"
         cfg.dataSource = dataSource
         cfg.transactionManager = transactionManager
@@ -68,9 +56,4 @@ class FlowableConfiguration {
     fun runtimeService(
         processEngine: ProcessEngine,
     ): RuntimeService = processEngine.runtimeService
-
-    @Bean
-    fun repositoryService(
-        processEngine: ProcessEngine,
-    ): RepositoryService = processEngine.repositoryService
 }
