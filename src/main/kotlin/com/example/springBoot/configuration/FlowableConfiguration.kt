@@ -18,9 +18,7 @@ import javax.sql.DataSource
 class FlowableConfiguration {
 
     @Bean
-    fun transactionManager(
-        dataSource: DataSource,
-    ): PlatformTransactionManager {
+    fun transactionManager(dataSource: DataSource): PlatformTransactionManager {
         val transactionManager = DataSourceTransactionManager()
         transactionManager.dataSource = dataSource
         return transactionManager
@@ -44,16 +42,12 @@ class FlowableConfiguration {
     }
 
     @Bean
-    fun processEngine(
-        processEngineConfiguration: SpringProcessEngineConfiguration,
-    ): ProcessEngineFactoryBean {
+    fun processEngine(processEngineConfiguration: SpringProcessEngineConfiguration): ProcessEngineFactoryBean {
         val processEngineFactoryBean = ProcessEngineFactoryBean()
         processEngineFactoryBean.processEngineConfiguration = processEngineConfiguration
         return processEngineFactoryBean
     }
 
     @Bean
-    fun runtimeService(
-        processEngine: ProcessEngine,
-    ): RuntimeService = processEngine.runtimeService
+    fun runtimeService(processEngine: ProcessEngine): RuntimeService = processEngine.runtimeService
 }

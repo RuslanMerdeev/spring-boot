@@ -17,8 +17,12 @@ class ActivityController(
 ) {
 
     @PostMapping("/activate/{productId}")
-    fun activate(@PathVariable productId: String) = productProcessService.startWith(productId)
+    fun activate(
+        @PathVariable productId: String,
+    ) = productProcessService.startWith(productId)
 
     @GetMapping("/products/{productId}")
-    fun product(@PathVariable productId: String) = productConfigService.fetchBy(productId)
+    fun product(
+        @PathVariable productId: String,
+    ) = productConfigService.fetchBy(productId)
 }
