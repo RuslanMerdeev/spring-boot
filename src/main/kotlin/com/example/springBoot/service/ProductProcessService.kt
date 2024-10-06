@@ -1,5 +1,6 @@
 package com.example.springBoot.service
 
+import com.example.springBoot.variable.PRODUCT_ID
 import com.example.springBoot.variable.PRODUCT_PROCESS_KEY
 import org.flowable.engine.RuntimeService
 import org.springframework.stereotype.Service
@@ -10,6 +11,6 @@ class ProductProcessService(
 ) {
 
     fun startWith(productId: String) {
-        runtimeService.startProcessInstanceByKey(PRODUCT_PROCESS_KEY, productId)
+        runtimeService.startProcessInstanceByKey(PRODUCT_PROCESS_KEY, mapOf(PRODUCT_ID to productId))
     }
 }
