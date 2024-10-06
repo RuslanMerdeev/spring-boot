@@ -26,7 +26,7 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$openapiVersion")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign:4.0.3")
     implementation("org.flowable:flowable-spring-boot-starter:6.8.1")
-    implementation("com.h2database:h2:2.3.232")
+    implementation("org.postgresql:postgresql:42.7.4")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

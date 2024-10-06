@@ -9,8 +9,10 @@ spring:
         config:
           product-service:
             url: https://dummyjson.com
+#  h2:
+#    console.enabled: true
   datasource:
-    username: sa
-    password:
-    url: "jdbc:h2:mem:flowable;DB_CLOSE_DELAY=-1"
-    driver-class-name: org.h2.Driver
+    username: cuba
+    password: cuba
+    url: "jdbc:postgresql://localhost/spring_boot"
+#    driver-class-name: org.h2.Driver
