@@ -1,6 +1,7 @@
 = Brands
-=== Logic
-==== Activation
+
+== Logic
+=== Activation
 . Service should be activated by _/activity/activate/{productId}_ endpoint
 . By productId service should get product brand from _ProductConfigServer_ and save it to _DB_
 ==== Get brand
