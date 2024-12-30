@@ -9,11 +9,18 @@ plugins {
 }
 
 group = "com.example"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("https://maven.pkg.github.com/RuslanMerdeev/product-starter")
+        credentials {
+            username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+            password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+        }
+    }
 }
 
 dependencies {
@@ -28,6 +35,7 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign:4.1.3")
     implementation("org.flowable:flowable-spring-boot-starter:6.8.1")
     implementation("com.h2database:h2:2.3.232")
+    implementation("com.example:product-starter:0.0.1")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
