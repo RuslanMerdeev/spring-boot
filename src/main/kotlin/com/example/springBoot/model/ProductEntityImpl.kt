@@ -9,7 +9,7 @@ import java.util.UUID
 
 @Entity
 @Table(name = "PRODUCTS")
-data class ProductEntity(
+data class ProductEntityImpl(
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     val id: UUID? = null,

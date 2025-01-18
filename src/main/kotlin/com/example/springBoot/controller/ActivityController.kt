@@ -1,7 +1,6 @@
 package com.example.springBoot.controller
 
-import com.example.springBoot.service.ProductConfigService
-import com.example.springBoot.service.ProductProcessService
+import com.example.productstarter.api.server.ActivityServer
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -12,17 +11,16 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/activity")
 @Suppress("unused")
 class ActivityController(
-    private val productProcessService: ProductProcessService,
-    private val productConfigService: ProductConfigService,
+    private val activityServer: ActivityServer,
 ) {
 
     @PostMapping("/activate/{productId}")
     fun activate(
         @PathVariable productId: String,
-    ) = productProcessService.startWith(productId)
+    ) = activityServer.activate(productId)
 
     @GetMapping("/products/{productId}")
     fun product(
         @PathVariable productId: String,
-    ) = productConfigService.fetchBy(productId)
+    ) = activityServer.product(productId)
 }
