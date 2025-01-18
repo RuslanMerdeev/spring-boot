@@ -28,17 +28,14 @@ dependencies {
     val openapiVersion = "2.6.0"
 
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$openapiVersion")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign:4.1.3")
-    implementation("org.flowable:flowable-spring-boot-starter:6.8.1")
     implementation("com.h2database:h2:2.3.232")
     implementation("org.mapstruct:mapstruct:1.6.3")
     kapt("org.mapstruct:mapstruct-processor:1.6.3")
-    implementation("com.example:product-starter:0.0.5")
+    implementation("com.example:product-starter:0.0.6")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

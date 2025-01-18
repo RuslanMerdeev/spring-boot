@@ -7,6 +7,7 @@ import com.example.springBoot.repository.ProductRepositoryImpl
 import org.springframework.stereotype.Service
 
 @Service
+@Suppress("unused")
 class ProductRepositoryAdapter(
     private val repository: ProductRepositoryImpl,
     val mapper: ProductEntityMapper,
