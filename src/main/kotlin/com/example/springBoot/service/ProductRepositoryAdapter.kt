@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service
 class ProductRepositoryAdapter(
     private val repository: ProductRepositoryImpl,
     val mapper: ProductEntityMapper,
-): ProductRepository {
+) : ProductRepository {
 
     override fun save(entity: ProductEntity): ProductEntity {
         val impl = repository.save(mapper.toImpl(entity))

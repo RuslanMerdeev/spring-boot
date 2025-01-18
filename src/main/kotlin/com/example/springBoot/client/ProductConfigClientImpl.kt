@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable
 
 @FeignClient(name = "product-service")
 @Suppress("unused")
-interface ProductConfigClientImpl: ProductConfigClient {
+interface ProductConfigClientImpl : ProductConfigClient {
 
     @GetMapping("/products/{productId}")
     override fun fetchBy(
