@@ -6,8 +6,4 @@ import org.mapstruct.Mapper
 import org.mapstruct.MappingConstants
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-interface ProductEntityMapper {
-
-    fun toImpl(original: ProductEntity?): ProductEntityImpl
-    fun toOriginal(impl: ProductEntityImpl?): ProductEntity
-}
+interface ProductEntityMapper: EntityMapper<ProductEntity, ProductEntityImpl>
