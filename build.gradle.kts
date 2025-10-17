@@ -35,7 +35,7 @@ dependencies {
     implementation("com.h2database:h2:2.3.232")
     implementation("org.mapstruct:mapstruct:1.6.3")
     kapt("org.mapstruct:mapstruct-processor:1.6.3")
-    implementation("com.example:product-starter:0.0.6")
+    implementation("com.example:product-starter:0.0.7")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
