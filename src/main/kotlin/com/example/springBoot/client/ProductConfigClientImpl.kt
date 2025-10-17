@@ -1,15 +1,17 @@
 package com.example.springBoot.client
 
-import com.example.springBoot.model.ProductResponse
+import com.example.productstarter.api.client.ProductConfigClient
+import com.example.productstarter.api.dto.ProductDto
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 
 @FeignClient(name = "product-service")
-interface ProductConfigClient {
+@Suppress("unused")
+interface ProductConfigClientImpl : ProductConfigClient {
 
     @GetMapping("/products/{productId}")
-    fun fetchBy(
+    override fun fetchBy(
         @PathVariable productId: String,
-    ): ProductResponse
+    ): ProductDto
 }
