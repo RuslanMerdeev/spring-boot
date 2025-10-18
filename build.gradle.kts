@@ -25,17 +25,17 @@ repositories {
 }
 
 dependencies {
-    val openapiVersion = "2.6.0"
+    val openapiVersion = "3.18.0"
 
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$openapiVersion")
-    implementation("org.springframework.cloud:spring-cloud-starter-openfeign:4.1.3")
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign:6.4.4")
     implementation("com.h2database:h2:2.3.232")
     implementation("org.mapstruct:mapstruct:1.6.3")
     kapt("org.mapstruct:mapstruct-processor:1.6.3")
-    implementation("com.example:product-starter:0.0.7")
+    implementation("com.example:product-starter:0.1.0")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
